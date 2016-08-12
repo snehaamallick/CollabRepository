@@ -14,7 +14,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">My Music Store</a>
+                    <a class="navbar-brand" href="#">My Blog</a>
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
@@ -28,7 +28,7 @@
                             <li><a href="<c:url value="/logout" />">Logout</a></li>
 
                             <c:if test="${pageContext.request.userPrincipal.name != 'admin'}">
-                                <li><a href="<c:url value="/customer/cart" />">Cart</a></li>
+                                <li><a href="<c:url value="#" />">Blog</a></li>
                             </c:if>
 
                             <c:if test="${pageContext.request.userPrincipal.name == 'admin'}">
