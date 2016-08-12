@@ -33,6 +33,10 @@ public class HomeController {
 	{
 		return "userpage";
 	}
+	@RequestMapping("/logout")
+    public String logout(){
+        return "index";
+    }
 	
 	
 	

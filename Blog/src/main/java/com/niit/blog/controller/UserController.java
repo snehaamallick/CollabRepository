@@ -33,7 +33,7 @@ public class UserController {
 	@RequestMapping(value = "/register", method = RequestMethod.GET)
     public String listPersons(Model model) {
         model.addAttribute("user", new User());
-        model.addAttribute("listfromtable", this.us.listUsers());
+      //  model.addAttribute("listfromtable", this.us.listUsers());
         return "register";
     }
 	

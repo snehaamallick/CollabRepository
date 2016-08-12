@@ -4,20 +4,22 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="my-style.css">
+  
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+<link rel="stylesheet" href="my-style.css">
  <!--  <link rel="stylesheet" href="blog-style.css">-->
- <style>
-body {
-	background-image" url("resources/images/blog.jpg") no-repeat;
-}
- </style>
+ 
+<style type="text/css">
+    <%@include file='/resources/css/my-style.css' %>
+</style>
+<style type="text/css">
+    <%@include file='/resources/css/blog-style.css' %>
+</style>
  
 
 </head>
-<body style="background-image:url('blog.jpg');">
+<body>
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -34,7 +36,7 @@ body {
 </nav>
 
      <div class=text-right> 
-      <a href="register" id="link" class="btn btn-success" role="button">Get Started</a>
+      <a href="register" id="a#loop_link" class="btn btn-success" role="button">Get Started</a>
 </div>
 
 

@@ -1,0 +1,14 @@
+
+body {
+    background-image: url("blog.jpg");
+    background-size: 100%;
+}
+
+
+a#loop_link{ 
+   position: right; 
+   top: 200px; 
+   left: 0; 
+   width: 100%; 
+}
+

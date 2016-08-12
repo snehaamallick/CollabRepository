@@ -25,7 +25,9 @@
             username-parameter="username"
             password-parameter="password" />
         <security:logout
-            logout-success-url="/logout" />
+            
+            logout-success-url="/logout"
+    logout-url="/perform_logout" />
             <security:csrf disabled="true"/>
     </security:http>
  
