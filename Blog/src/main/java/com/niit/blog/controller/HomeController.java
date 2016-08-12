@@ -28,7 +28,7 @@ public class HomeController {
 	{
 		return "adminpage";
 	}
-	@RequestMapping("/welcome")
+	@RequestMapping("/user")
 	public String loadUserPage()
 	{
 		return "userpage";

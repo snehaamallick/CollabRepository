@@ -18,9 +18,10 @@
         
         <security:form-login
             login-page="/signin"
-            default-target-url="/admin"
+            
             login-processing-url="/perform_login"
             authentication-failure-url="/loginError"
+            authentication-success-handler-ref="customAuthenticationSuccessHandler"
             username-parameter="username"
             password-parameter="password" />
         <security:logout

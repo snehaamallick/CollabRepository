@@ -31,5 +31,10 @@
  
  <bean id="udi" class="com.niit.blog.dao.impl.UserDAOImpl"></bean>
 	<bean id="us" class="com.niit.blog.service.impl.UserServiceImpl"></bean>
- 	
+	
+	
+	<bean id="customAuthenticationSuccessHandler" class="com.niit.blog.handler.CustomAuthenticationSuccessHandler" />
+	
 </beans>
+	
+ 	
