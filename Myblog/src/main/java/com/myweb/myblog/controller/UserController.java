@@ -1,4 +1,5 @@
 package com.myweb.myblog.controller;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,8 +14,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.google.gson.Gson;
@@ -92,6 +95,45 @@ public class UserController {
 		   return mv;
 	    
 	}
+	
+	@RequestMapping("/user")
+	public String loadUserPage(Model model)
+	{
+		model.addAttribute("listfromtable", this.us.listUsers());
+		return "userpage";
+	}
+	@RequestMapping("/user/basicdetail/editdetail/{userId}")
+    public String editProduct(@PathVariable("userId") int id,  Model model){
+        User user = us.getUserById(id);
+
+        model.addAttribute("user", user);
+
+        return "editbasic";
+    }
+	
+	@RequestMapping(value="/user/basicdetail/editdetail", method = RequestMethod.POST)
+    public String editProductPost(@Valid @ModelAttribute("basicdetail") User user, BindingResult result, HttpServletRequest request){
+
+        
+
+
+       /* MultipartFile productImage = product.getProductImage();
+        String rootDirectory = request.getSession().getServletContext().getRealPath("/");
+        path = Paths.get(rootDirectory + "/WEB-INF/resources/images/" + product.getProductId() + ".png");
+
+        if(productImage != null && !productImage.isEmpty()){
+            try {
+                productImage.transferTo(new File(path.toString()));
+            } catch (Exception ex){
+                ex.printStackTrace();
+                throw new RuntimeException("Product image saving failed", ex);
+            }
+        }*/
+		//model.addAttribute("basicdetail", this.us.getUserById(userId));
+        us.updateUser(user);
+
+        return "redirect:/user";
+    }
 
 
 }

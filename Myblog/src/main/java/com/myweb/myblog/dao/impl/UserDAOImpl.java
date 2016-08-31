@@ -29,8 +29,12 @@ public class UserDAOImpl{
     }
     
     public void updateUser(User u) {
-        Session session = this.sessionFactory.getCurrentSession();
-        session.update(u);
+       // Session session = this.sessionFactory.getCurrentSession();
+        //session.update(u);
+        
+        Session session = sessionFactory.getCurrentSession();
+        session.saveOrUpdate(u);
+        session.flush();
     }
     
     public List<User> listUsers() {
@@ -62,6 +66,14 @@ public class UserDAOImpl{
     	//String hql = "from User u where ute.username="+username+"";
     	//Query q = session.createQuery("from User u where u.username=" + "'"+ username+"'");
     	//Query q = sessionFactory.getCurrentSession().createQuery(hql);
+    	
+    	/*Query q = session.createQuery("from User u where u.username=" + "'"+ username+"'");
+    	List<User> users = (List<User>) q.list();
+    	User user=users.get(0);
+    	*/
+    	
+    	
+    	
     	List<User> users=session.createQuery("FROM User").list();
     	User user=users.get(0);
     	return user;

@@ -1,58 +1,43 @@
-<!DOCTYPE html>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <html>
-  <head>
-    <title>My Web Page</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
- 
-   <link href="/twitter-bootstrap/twitter-bootstrap-v2/docs/assets/css/bootstrap2.2.css" rel="stylesheet">  
-	<link rel="stylesheet" href="demo.css">
-	<link rel="stylesheet" href="footer-distributed.css">
-	
-	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
-	
-	
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="https://code.jquery.com/jquery.js"></script>
-	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  </head>
-  <body>
- 
-<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <div class="container">
+<head>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="my-style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse"
-                    data-target="#bs-example-navbar-collapse-1">
+</head>
+<body>
 
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
 
-            </button>
-            <c:set var="img" value=<c:url value="/resources/images/diginxt.png"/>/>
-            <a class="navbar-brand" href="home">
-                <img src="https://www.news-pr.in/wp-content/uploads/diginxt_48232.jpg" height="70" width="250" alt="">
-            </a>
-        </div>
-
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="openblog">Blog</a></li>
-                <li><a href="openforum">Forum</a></li>
-                <li><a href="openchat">Chat</a></li>
-                <li><a href="logout">Log Out</a></li>
-            </ul>
-        </div>
-    </div>
-</nav>
-
+<%@ include file='inlineheader.jsp'%>
 <!--  ========= Body ========= -->
 <br><br><br>
+<table id="myTable" class="table table-striped table-hover">
+            <thead>
+            <tr class="bg-success">
+                
+                
+                <th>Email</th>
+                
+                <th></th>
+            </tr>
+            </thead>
+            <c:forEach items="${listfromtable}" var="user">
+                <tr>
+                    
+                    <td>${user.email}</td>
+                 
+                    <td>
+                        <a href="<spring:url value="/user/basicdetail/editdetail/${user.userId}" />"><span class="glyphicon glyphicon-pencil"></span></a>
+                    </td>
+                </tr>
+            </c:forEach>
+        </table>
+<a href="<spring:url value="/user/basicdetail/editdetail/${user.userId}" />"><span class="glyphicon glyphicon-pencil"></span></a>
 
 <img src="resources/images/${param.user}.png" alt="unable to load"/>
 

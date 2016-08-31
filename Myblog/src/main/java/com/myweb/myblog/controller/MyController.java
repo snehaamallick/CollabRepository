@@ -8,6 +8,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -30,11 +31,12 @@ public class MyController {
 	{
 		return "adminpage";
 	}
-	@RequestMapping("/user")
-	public String loadUserPage()
+	/*@RequestMapping("/user")
+	public String loadUserPage(Model model)
 	{
+		model.addAttribute("listfromtable", this.ss.listPersons());
 		return "userpage";
-	}
+	}*/
 	@RequestMapping(value="/logout", method = RequestMethod.GET)
 	public String logoutPage (HttpServletRequest request, HttpServletResponse response) {
 	    Authentication auth = SecurityContextHolder.getContext().getAuthentication();

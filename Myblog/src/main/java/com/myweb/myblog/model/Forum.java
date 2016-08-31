@@ -17,6 +17,27 @@ public class Forum {
 	private String fcontent;
 	
 	private Date time;
+	
+	private String u_name;
+
+	public String getU_name() {
+		return u_name;
+	}
+
+	public void setU_name(String u_name) {
+		this.u_name = u_name;
+	}
+	
+	private String fCategory;
+	
+
+	public String getfCategory() {
+		return fCategory;
+	}
+
+	public void setfCategory(String fCategory) {
+		this.fCategory = fCategory;
+	}
 
 	public int getfId() {
 		return fId;
