@@ -41,9 +41,7 @@ public class BlogController {
 		this.us = us;
 	}
 	
-	//@Autow
-	//private UserServiceImpl us;
-	
+
 	
 	public BlogController() {
 		super();
